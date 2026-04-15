@@ -1,6 +1,6 @@
 "use client";
 
-import { CapitalSection } from "@/components/CapitalSection";
+import CapitalSection from "@/components/CapitalSection";
 
 export default function Home() {
   return (
