@@ -36,7 +36,7 @@ const aiFeatures = [
 ];
 
 const capitalFeatures = [
-  '$5K - $250K+ in business capital',
+  '$5K – $250K+ in business capital',
   'Approval in 24 hours',
   'Cash in your account in 48 hours',
   'No setup fees. No hidden costs.',
@@ -51,30 +51,30 @@ const stats = [
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-[#F8F7F5]">
       <Nav />
 
       {/* HERO */}
-      <section className="bg-primary text-white pt-36 pb-24 px-4">
+      <section className="bg-[#F8F7F5] pt-36 pb-24 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-accent/10 border border-accent/30 rounded-full px-4 py-2 mb-8">
+          <div className="inline-flex items-center gap-2 border border-accent/30 bg-accent/5 rounded-full px-4 py-2 mb-8">
             <span className="w-2 h-2 bg-accent rounded-full inline-block"></span>
             <span className="text-accent text-sm font-semibold">
               Eddie Jasso | Top 1% Mortgage Producer | 15+ Yrs Experience
             </span>
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6">
+          <h1 className="text-5xl md:text-7xl font-bold text-primary leading-tight mb-6">
             AI-Powered Growth<br />
             <span className="text-accent">for Service Businesses</span>
           </h1>
-          <p className="text-gray-300 text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-gray-500 text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
             Blacklyne combines AI lead generation with direct business capital to help plumbers,
             HVAC pros, and service businesses grow faster.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/loans"
-              className="bg-accent hover:bg-accent-dark text-white font-bold px-8 py-4 rounded-full text-lg transition-colors"
+              className="bg-accent hover:bg-accent-dark text-white font-bold px-8 py-4 rounded-full text-lg transition-colors shadow-lg"
             >
               Get Business Capital
             </Link>
@@ -82,7 +82,7 @@ export default function Home() {
               href="https://calendly.com/eddiejasso"
               target="_blank"
               rel="noopener noreferrer"
-              className="border-2 border-white/30 hover:border-white text-white font-bold px-8 py-4 rounded-full text-lg transition-colors"
+              className="border-2 border-gray-200 hover:border-accent text-primary font-bold px-8 py-4 rounded-full text-lg transition-colors"
             >
               Book a Free Call
             </a>
@@ -90,49 +90,53 @@ export default function Home() {
         </div>
       </section>
 
-      {/* STATS */}
-      <section className="bg-accent py-12 px-4">
+      {/* STATS — warm cream-to-peach gradient */}
+      <section
+        style={{ background: 'linear-gradient(135deg, #FFF5E6 0%, #FFE6CC 100%)' }}
+        className="py-14 px-4 border-y border-orange-100"
+      >
         <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat) => (
-            <div key={stat.label} className="text-center text-primary">
-              <p className="text-4xl font-bold">{stat.value}</p>
-              <p className="text-sm font-semibold mt-1 opacity-80">{stat.label}</p>
+            <div key={stat.label} className="text-center">
+              <p className="text-4xl md:text-5xl font-bold text-accent">{stat.value}</p>
+              <p className="text-sm font-semibold text-gray-600 mt-1">{stat.label}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* PRODUCTS */}
-      <section className="py-24 px-4 bg-gray-50">
+      <section className="py-24 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">Two Ways to Grow</h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
               Choose the solution that fits your business — or use both to dominate your market.
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
-            {/* AI Platform Card */}
-            <div className="bg-primary text-white rounded-2xl p-8 flex flex-col">
-              <div className="bg-accent/10 border border-accent/20 rounded-lg px-3 py-1.5 text-accent text-xs font-bold uppercase tracking-wider w-fit mb-6">
+            {/* AI Platform */}
+            <div className="bg-[#F8F7F5] rounded-2xl p-8 flex flex-col border border-[#F0F0F0] relative overflow-hidden">
+              <div className="absolute top-0 left-0 right-0 h-1 bg-accent rounded-t-2xl"></div>
+              <div className="bg-accent/10 rounded-lg px-3 py-1.5 text-accent text-xs font-bold uppercase tracking-wider w-fit mb-6">
                 AI Lead Generation
               </div>
-              <h3 className="text-3xl font-bold mb-4">Stop Losing Leads to Voicemail</h3>
-              <p className="text-gray-300 mb-8">
+              <h3 className="text-2xl font-bold text-primary mb-3">Stop Losing Leads to Voicemail</h3>
+              <p className="text-gray-500 mb-8 leading-relaxed">
                 Your AI employee works 24/7 — responding instantly, booking appointments, and following up automatically.
               </p>
               <ul className="space-y-3 mb-10 flex-1">
                 {aiFeatures.map((feature) => (
-                  <li key={feature} className="flex items-start gap-3 text-gray-200 text-sm">
-                    <span className="text-accent mt-0.5 shrink-0">✓</span>
+                  <li key={feature} className="flex items-start gap-3 text-gray-700 text-sm">
+                    <span className="text-accent mt-0.5 shrink-0 font-bold">✓</span>
                     {feature}
                   </li>
                 ))}
               </ul>
-              <div className="border-t border-white/10 pt-6 flex items-center justify-between">
+              <div className="border-t border-[#F0F0F0] pt-6 flex items-center justify-between">
                 <div>
                   <p className="text-gray-400 text-sm">Starting at</p>
-                  <p className="text-3xl font-bold text-accent">
+                  <p className="text-3xl font-bold text-primary">
                     $497<span className="text-lg text-gray-400">/mo</span>
                   </p>
                 </div>
@@ -147,33 +151,34 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Capital Card */}
-            <div className="bg-white border-2 border-gray-100 rounded-2xl p-8 flex flex-col">
-              <div className="bg-primary/5 border border-primary/10 rounded-lg px-3 py-1.5 text-primary text-xs font-bold uppercase tracking-wider w-fit mb-6">
+            {/* Capital */}
+            <div className="bg-primary rounded-2xl p-8 flex flex-col text-white relative overflow-hidden">
+              <div className="absolute top-0 left-0 right-0 h-1 bg-accent rounded-t-2xl"></div>
+              <div className="bg-white/10 border border-white/10 rounded-lg px-3 py-1.5 text-white text-xs font-bold uppercase tracking-wider w-fit mb-6">
                 Direct Business Capital
               </div>
-              <h3 className="text-3xl font-bold text-primary mb-4">Fund Your Growth in 48 Hours</h3>
-              <p className="text-gray-600 mb-8">
+              <h3 className="text-2xl font-bold mb-3">Fund Your Growth in 48 Hours</h3>
+              <p className="text-gray-300 mb-8 leading-relaxed">
                 Skip the bank. Get the capital you need to hire, buy equipment, or expand — fast.
               </p>
               <ul className="space-y-3 mb-10 flex-1">
                 {capitalFeatures.map((feature) => (
-                  <li key={feature} className="flex items-start gap-3 text-gray-700 text-sm">
-                    <span className="text-accent mt-0.5 shrink-0">✓</span>
+                  <li key={feature} className="flex items-start gap-3 text-gray-200 text-sm">
+                    <span className="text-accent mt-0.5 shrink-0 font-bold">✓</span>
                     {feature}
                   </li>
                 ))}
               </ul>
-              <div className="border-t border-gray-100 pt-6 flex items-center justify-between">
+              <div className="border-t border-white/10 pt-6 flex items-center justify-between">
                 <div>
                   <p className="text-gray-400 text-sm">Loans from</p>
-                  <p className="text-3xl font-bold text-primary">
+                  <p className="text-3xl font-bold text-accent">
                     $5K<span className="text-lg text-gray-400"> – $250K+</span>
                   </p>
                 </div>
                 <Link
                   href="/loans"
-                  className="bg-primary hover:bg-primary-light text-white font-bold px-6 py-3 rounded-full transition-colors"
+                  className="bg-accent hover:bg-accent-dark text-white font-bold px-6 py-3 rounded-full transition-colors"
                 >
                   Check Eligibility
                 </Link>
@@ -184,23 +189,23 @@ export default function Home() {
       </section>
 
       {/* INDUSTRIES */}
-      <section className="py-24 px-4 bg-primary">
+      <section className="py-24 px-4 bg-[#F8F7F5]">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Built for Your Industry</h2>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">Built for Your Industry</h2>
+            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
               Blacklyne is designed for the businesses that keep communities running.
             </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
             {industries.map((industry) => (
               <div
                 key={industry.name}
-                className="bg-primary-light border border-accent/10 hover:border-accent rounded-xl p-6 transition-colors"
+                className="bg-white border border-[#F0F0F0] hover:border-accent rounded-xl p-6 transition-colors cursor-default"
               >
                 <p className="text-4xl mb-4">{industry.emoji}</p>
-                <h3 className="text-xl font-bold text-white mb-2">{industry.name}</h3>
-                <p className="text-gray-400 text-sm">{industry.desc}</p>
+                <h3 className="text-lg font-bold text-primary mb-2">{industry.name}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{industry.desc}</p>
               </div>
             ))}
           </div>
@@ -212,16 +217,16 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">What Clients Say</h2>
-            <p className="text-gray-600 text-lg">Real results from real service businesses.</p>
+            <p className="text-gray-500 text-lg">Real results from real service businesses.</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((t) => (
-              <div key={t.name} className="bg-gray-50 rounded-xl p-8 border border-gray-100">
-                <p className="text-gray-300 text-4xl mb-4 leading-none">&ldquo;</p>
-                <p className="text-gray-700 mb-6 leading-relaxed">{t.quote}</p>
-                <div className="border-t border-gray-200 pt-4">
-                  <p className="font-bold text-primary">{t.name}</p>
-                  <p className="text-sm text-gray-500">{t.title}</p>
+              <div key={t.name} className="bg-[#F8F7F5] rounded-xl p-8 border border-[#F0F0F0]">
+                <p className="text-accent text-4xl font-serif leading-none mb-4">&ldquo;</p>
+                <p className="text-gray-700 mb-6 leading-relaxed text-sm">{t.quote}</p>
+                <div className="border-t border-[#F0F0F0] pt-4">
+                  <p className="font-bold text-primary text-sm">{t.name}</p>
+                  <p className="text-xs text-gray-400 mt-0.5">{t.title}</p>
                 </div>
               </div>
             ))}
@@ -232,8 +237,8 @@ export default function Home() {
       {/* FINAL CTA */}
       <section className="bg-accent py-24 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-5xl font-bold text-white mb-6">Ready to Grow?</h2>
-          <p className="text-white/80 text-xl mb-10 max-w-2xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Ready to Grow?</h2>
+          <p className="text-white/80 text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
             Book a free 30-minute strategy call with Eddie. We&apos;ll map out exactly where you&apos;re
             losing revenue and how to recover it.
           </p>
@@ -242,13 +247,13 @@ export default function Home() {
               href="https://calendly.com/eddiejasso"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-primary hover:bg-primary-light text-white font-bold px-10 py-4 rounded-full text-lg transition-colors"
+              className="bg-white hover:bg-gray-50 text-accent font-bold px-10 py-4 rounded-full text-lg transition-colors shadow-lg"
             >
               Book Free Strategy Call
             </a>
             <Link
               href="/about"
-              className="border-2 border-white/30 hover:border-white text-white font-bold px-10 py-4 rounded-full text-lg transition-colors"
+              className="border-2 border-white/40 hover:border-white text-white font-bold px-10 py-4 rounded-full text-lg transition-colors"
             >
               Learn About Eddie
             </Link>
@@ -257,11 +262,13 @@ export default function Home() {
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-primary-light border-t border-white/5 py-12 px-4">
+      <footer className="bg-primary py-12 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div className="md:col-span-2">
-              <Link href="/" className="text-2xl font-bold text-accent">Blacklyne</Link>
+              <Link href="/" className="text-2xl font-bold text-white">
+                Black<span className="text-accent">lyne</span>
+              </Link>
               <p className="text-gray-400 mt-2 text-sm">AI-Powered Growth for Local Service Businesses</p>
             </div>
             <div>
@@ -289,7 +296,7 @@ export default function Home() {
               </ul>
             </div>
           </div>
-          <div className="border-t border-white/5 pt-8 text-center text-sm text-gray-600">
+          <div className="border-t border-white/10 pt-8 text-center text-sm text-gray-600">
             &copy; 2026 Blacklyne. All rights reserved.
           </div>
         </div>
