@@ -2,7 +2,7 @@
 
 :root {
   --background: #F8F7F5;
-  --foreground: #1a1a1a;
+  --foreground: #2b4871;
 }
 
 @theme inline {
@@ -13,11 +13,13 @@
 }
 
 @theme {
-  --color-primary: #1a1a1a;
-  --color-primary-light: #2d2d2d;
-  --color-accent: #FF7700;
-  --color-accent-dark: #E66600;
-  --color-surface: #F8F7F5;
+  --color-primary: #2b4871;
+  --color-primary-light: #3d5f8f;
+  --color-accent: #ff8007;
+  --color-accent-dark: #e67000;
+  --color-brand-red: #ff3902;
+  --color-brand-cyan: #05badd;
+  --color-brand-yellow: #ffb404;
 }
 
 body {

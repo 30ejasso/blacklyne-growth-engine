@@ -4,13 +4,14 @@ export default function Nav() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
       <nav className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <Link href="/" className="text-2xl font-bold text-primary">
+        <Link href="/" className="text-2xl font-black text-primary">
           Black<span className="text-accent">lyne</span>
         </Link>
-        <div className="hidden md:flex items-center gap-8">
-          <Link href="/about" className="text-gray-500 hover:text-primary text-sm font-medium transition-colors">About</Link>
-          <Link href="/loans" className="text-gray-500 hover:text-primary text-sm font-medium transition-colors">Business Capital</Link>
-          <a href="tel:+16029803338" className="text-gray-500 hover:text-primary text-sm font-medium transition-colors">602.980.3338</a>
+        <div className="hidden md:flex items-center gap-7">
+          <Link href="/" className="text-gray-500 hover:text-primary text-sm font-semibold transition-colors">Home</Link>
+          <Link href="/about" className="text-gray-500 hover:text-primary text-sm font-semibold transition-colors">About</Link>
+          <Link href="/loans" className="text-gray-500 hover:text-primary text-sm font-semibold transition-colors">Business Capital</Link>
+          <a href="tel:+16029803338" className="text-gray-500 hover:text-primary text-sm font-semibold transition-colors">602.980.3338</a>
         </div>
         <a
           href="https://calendly.com/eddiejasso"
