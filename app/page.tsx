@@ -1,6 +1,9 @@
 import Link from 'next/link';
 import { Check, Zap, TrendingUp, Users, ArrowRight } from 'lucide-react';
 import Nav from '@/components/Nav';
+import HeroSection from '@/components/HeroSection';
+import DashboardSection from '@/components/DashboardSection';
+import OrbitSection from '@/components/OrbitSection';
 
 /* ─── DATA ─────────────────────────────────────────────────────────────── */
 
@@ -55,15 +58,6 @@ const trustCards = [
   },
 ];
 
-const industries = [
-  { emoji: '🔧', name: 'Plumbing', desc: 'Capture emergency calls instantly. Never lose a hot lead again.' },
-  { emoji: '❄️', name: 'HVAC', desc: 'Fill your schedule year-round. AI handles the seasonal surge.' },
-  { emoji: '💆', name: 'Med Spa', desc: 'Automate bookings and follow-ups. Grow repeat clients.' },
-  { emoji: '🦷', name: 'Dental', desc: 'Reduce no-shows. Fill appointment slots automatically.' },
-  { emoji: '🚗', name: 'Auto', desc: 'Convert service inquiries faster. Upsell with AI.' },
-  { emoji: '🏠', name: 'Real Estate', desc: 'Nurture leads 24/7. Never miss a buyer or seller.' },
-];
-
 const testimonials = [
   {
     quote: "We were losing 40% of inbound leads to voicemail. Blacklyne's AI employee responds instantly — even at 2am. Our close rate is up 35%.",
@@ -89,67 +83,8 @@ export default function Home() {
     <div className="flex flex-col min-h-screen bg-[#F8F7F5]">
       <Nav />
 
-      {/* ══════════════════════════════════════════════
-          STEP 1 — HERO: THE PROBLEM
-      ══════════════════════════════════════════════ */}
-      <section className="bg-[#F8F7F5] pt-36 pb-24 px-4">
-        <div className="max-w-5xl mx-auto text-center">
-
-          {/* Founder badge */}
-          <div className="inline-flex items-center gap-2 border border-brand-cyan/40 bg-brand-cyan/5 rounded-full px-5 py-2 mb-10">
-            <span className="w-2 h-2 bg-brand-cyan rounded-full inline-block" />
-            <span className="text-brand-cyan text-sm font-bold tracking-wide">
-              Eddie Jasso · AI-Powered Business Growth · Phoenix, AZ
-            </span>
-          </div>
-
-          {/* Cyan accent line */}
-          <div className="flex items-center justify-center gap-3 mb-6">
-            <div className="h-1 w-12 bg-brand-cyan rounded-full" />
-            <div className="h-1 w-4 bg-brand-cyan/40 rounded-full" />
-          </div>
-
-          {/* Hero headline — MASSIVE, RED, 900 weight */}
-          <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black text-brand-red leading-none tracking-tight mb-4 uppercase">
-            Stop Losing<br />Leads.
-          </h1>
-
-          {/* Cyan accent line */}
-          <div className="flex items-center justify-center gap-3 mt-6 mb-8">
-            <div className="h-1 w-4 bg-brand-cyan/40 rounded-full" />
-            <div className="h-1 w-12 bg-brand-cyan rounded-full" />
-          </div>
-
-          {/* Secondary headline — Navy, bold */}
-          <p className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-primary leading-tight mb-6">
-            Start Growing Revenue.
-          </p>
-
-          {/* Subheading */}
-          <p className="text-gray-500 text-xl max-w-2xl mx-auto leading-relaxed mb-10">
-            Blacklyne gives local service businesses the AI-powered systems to capture every lead,
-            convert faster, and grow on autopilot.
-          </p>
-
-          {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="https://calendly.com/eddiejasso"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-accent hover:bg-accent-dark text-white font-bold px-9 py-4 rounded-full text-lg transition-colors shadow-lg"
-            >
-              Book a Strategy Call
-            </a>
-            <Link
-              href="/about"
-              className="border-2 border-primary/25 hover:border-primary text-primary font-bold px-9 py-4 rounded-full text-lg transition-colors"
-            >
-              Learn More
-            </Link>
-          </div>
-        </div>
-      </section>
+      {/* ── 1. HERO (animated client component) ── */}
+      <HeroSection />
 
       {/* Stats strip */}
       <div
@@ -166,9 +101,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* ══════════════════════════════════════════════
-          STEP 2 — PRICING
-      ══════════════════════════════════════════════ */}
+      {/* ── 2. PRICING ── */}
       <section className="py-24 px-4 bg-[#F8F7F5]">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
@@ -212,7 +145,6 @@ export default function Home() {
 
             {/* GROWTH — Featured */}
             <div className="bg-white rounded-2xl border-2 border-brand-cyan p-8 flex flex-col relative shadow-xl shadow-brand-cyan/10">
-              {/* Blue "Most Popular" badge */}
               <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white text-xs font-bold px-5 py-1.5 rounded-full whitespace-nowrap">
                 Most Popular
               </div>
@@ -271,9 +203,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ══════════════════════════════════════════════
-          STEP 3 — FINAL CTA: RED BACKGROUND
-      ══════════════════════════════════════════════ */}
+      {/* ── 3. ANIMATED DASHBOARD ── */}
+      <DashboardSection />
+
+      {/* ── 4. ORBITING INDUSTRY ICONS ── */}
+      <OrbitSection />
+
+      {/* ── 5. RED CTA ── */}
       <section className="bg-brand-red py-24 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-5xl md:text-6xl font-black text-white mb-6 leading-tight">
@@ -302,13 +238,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ══════════════════════════════════════════════
-          STEP 4 — WHO WE ARE: CREDIBILITY
-      ══════════════════════════════════════════════ */}
+      {/* ── 6. WHO WE ARE — CREDIBILITY ── */}
       <section className="py-24 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
-
-          {/* Obsessed With Growth */}
           <div className="max-w-3xl mb-20">
             <h2 className="text-4xl md:text-5xl font-black text-primary mb-8">
               Obsessed With Growth.
@@ -323,13 +255,13 @@ export default function Home() {
                 fixing broken systems across multiple industries. Along the way, we&apos;ve generated over
                 $100M in production and built relationships with hundreds of partners nationwide.
               </p>
-              <p className="font-semibold text-primary text-xl">But what stood out the most?</p>
+              <p className="font-bold text-primary text-xl">But what stood out the most?</p>
               <div className="border-l-4 border-brand-cyan pl-6 space-y-2">
-                <p className="font-bold text-primary">Missed opportunities.</p>
-                <p className="font-bold text-primary">Slow follow-up.</p>
-                <p className="font-bold text-primary">Leads going cold.</p>
+                <p className="font-black text-primary">Missed opportunities.</p>
+                <p className="font-black text-primary">Slow follow-up.</p>
+                <p className="font-black text-primary">Leads going cold.</p>
               </div>
-              <p className="text-accent font-bold text-xl">So we built Blacklyne to solve that.</p>
+              <p className="text-accent font-black text-xl">So we built Blacklyne to solve that.</p>
               <p>
                 Today, we help businesses capture the revenue they&apos;re already generating but losing —
                 by installing better systems, improving response time, and creating real accountability
@@ -339,33 +271,27 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Built From Experience */}
-          <div>
-            <h3 className="text-3xl md:text-4xl font-black text-primary mb-10">
-              Built From Experience.
-            </h3>
-            <div className="grid md:grid-cols-3 gap-8">
-              {trustCards.map((card) => {
-                const Icon = card.icon;
-                return (
-                  <div key={card.title} className="bg-[#F8F7F5] rounded-xl p-8 border border-[#F0F0F0]">
-                    <div className="w-12 h-12 rounded-xl bg-brand-yellow/20 flex items-center justify-center mb-5">
-                      <Icon className="text-brand-yellow" size={24} />
-                    </div>
-                    <h4 className="text-xl font-black text-primary mb-3">{card.title}</h4>
-                    <p className="text-gray-500 leading-relaxed text-sm">{card.desc}</p>
+          <h3 className="text-3xl md:text-4xl font-black text-primary mb-10">
+            Built From Experience.
+          </h3>
+          <div className="grid md:grid-cols-3 gap-8">
+            {trustCards.map((card) => {
+              const Icon = card.icon;
+              return (
+                <div key={card.title} className="bg-[#F8F7F5] rounded-xl p-8 border border-[#F0F0F0]">
+                  <div className="w-12 h-12 rounded-xl bg-brand-yellow/20 flex items-center justify-center mb-5">
+                    <Icon className="text-brand-yellow" size={24} />
                   </div>
-                );
-              })}
-            </div>
+                  <h4 className="text-xl font-black text-primary mb-3">{card.title}</h4>
+                  <p className="text-gray-500 leading-relaxed text-sm">{card.desc}</p>
+                </div>
+              );
+            })}
           </div>
-
         </div>
       </section>
 
-      {/* ══════════════════════════════════════════════
-          STEP 5a — BUSINESS CAPITAL
-      ══════════════════════════════════════════════ */}
+      {/* ── 7. BUSINESS CAPITAL ── */}
       <section className="py-20 px-4 bg-primary">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10">
           <div className="max-w-xl">
@@ -408,35 +334,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ══════════════════════════════════════════════
-          STEP 5b — INDUSTRIES
-      ══════════════════════════════════════════════ */}
-      <section className="py-24 px-4 bg-[#F8F7F5]">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-14">
-            <h2 className="text-4xl md:text-5xl font-black text-primary mb-4">Built for Your Industry.</h2>
-            <p className="text-gray-500 text-lg max-w-xl mx-auto">
-              Blacklyne is designed for the businesses that keep communities running.
-            </p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
-            {industries.map((industry) => (
-              <div
-                key={industry.name}
-                className="bg-white border border-[#F0F0F0] hover:border-accent rounded-xl p-6 transition-colors"
-              >
-                <p className="text-4xl mb-4">{industry.emoji}</p>
-                <h3 className="text-lg font-black text-primary mb-2">{industry.name}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{industry.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════════════
-          STEP 5c — TESTIMONIALS
-      ══════════════════════════════════════════════ */}
+      {/* ── 8. TESTIMONIALS ── */}
       <section className="py-24 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
@@ -458,9 +356,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ══════════════════════════════════════════════
-          FOOTER
-      ══════════════════════════════════════════════ */}
+      {/* ── FOOTER ── */}
       <footer className="bg-primary py-12 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
