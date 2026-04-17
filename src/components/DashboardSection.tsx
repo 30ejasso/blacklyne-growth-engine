@@ -3,36 +3,9 @@
 import { useEffect, useRef, useState } from 'react';
 
 const METRICS = [
-  {
-    label: 'Leads Captured',
-    target: 1247,
-    prefix: '',
-    suffix: '',
-    color: '#ff8007',
-    badge: '+23%',
-    badgeClass: 'text-green-400',
-    icon: '📈',
-  },
-  {
-    label: 'Avg Response Time',
-    target: 45,
-    prefix: '< ',
-    suffix: 's',
-    color: '#ff3902',
-    badge: '-67% faster',
-    badgeClass: 'text-orange-400',
-    icon: '⚡',
-  },
-  {
-    label: 'Revenue Generated',
-    target: 184,
-    prefix: '$',
-    suffix: 'K',
-    color: '#ff8007',
-    badge: '+31%',
-    badgeClass: 'text-green-400',
-    icon: '💰',
-  },
+  { label: 'Leads Captured', target: 1247, prefix: '', suffix: '', color: '#ff8007', badge: '+23%', badgeClass: 'text-green-400', icon: '📈' },
+  { label: 'Avg Response Time', target: 45, prefix: '< ', suffix: 's', color: '#ff3902', badge: '-67% faster', badgeClass: 'text-orange-400', icon: '⚡' },
+  { label: 'Revenue Generated', target: 184, prefix: '$', suffix: 'K', color: '#ff8007', badge: '+31%', badgeClass: 'text-green-400', icon: '💰' },
 ];
 
 const PIPELINE = [
@@ -42,19 +15,8 @@ const PIPELINE = [
   { label: 'Deals Closed', pct: 60 },
 ];
 
-function Counter({
-  target,
-  prefix = '',
-  suffix = '',
-  started,
-}: {
-  target: number;
-  prefix?: string;
-  suffix?: string;
-  started: boolean;
-}) {
+function Counter({ target, prefix = '', suffix = '', started }: { target: number; prefix?: string; suffix?: string; started: boolean }) {
   const [count, setCount] = useState(0);
-
   useEffect(() => {
     if (!started) return;
     const DURATION = 2000;
@@ -68,14 +30,7 @@ function Counter({
     };
     requestAnimationFrame(step);
   }, [started, target]);
-
-  return (
-    <span>
-      {prefix}
-      {count.toLocaleString()}
-      {suffix}
-    </span>
-  );
+  return <span>{prefix}{count.toLocaleString()}{suffix}</span>;
 }
 
 export default function DashboardSection() {
@@ -107,7 +62,7 @@ export default function DashboardSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-20 px-4 bg-white">
+    <section ref={sectionRef} className="py-20 px-4 bg-[#EEEEEE]">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-black text-primary mb-4">
@@ -118,9 +73,7 @@ export default function DashboardSection() {
           </p>
         </div>
 
-        {/* Dashboard card */}
         <div className="bg-primary rounded-2xl p-8 md:p-10 shadow-2xl">
-
           {/* Fake browser chrome */}
           <div className="flex items-center gap-2 mb-8">
             <div className="w-3 h-3 rounded-full bg-red-500" />
@@ -129,26 +82,16 @@ export default function DashboardSection() {
             <span className="text-gray-500 text-xs font-mono ml-2">blacklyne-dashboard.live</span>
           </div>
 
-          {/* Metric cards */}
+          {/* Metrics */}
           <div className="grid md:grid-cols-3 gap-5 mb-10">
             {METRICS.map((m) => (
-              <div
-                key={m.label}
-                className="bg-primary-light rounded-xl p-6 border border-white/5"
-              >
+              <div key={m.label} className="bg-primary-light rounded-xl p-6 border border-white/5">
                 <div className="flex items-start justify-between mb-3">
-                  <span className="text-gray-400 text-xs uppercase tracking-widest font-semibold">
-                    {m.label}
-                  </span>
+                  <span className="text-gray-400 text-xs uppercase tracking-widest font-semibold">{m.label}</span>
                   <span className="text-xl">{m.icon}</span>
                 </div>
                 <div className="text-4xl font-black mb-2" style={{ color: m.color }}>
-                  <Counter
-                    target={m.target}
-                    prefix={m.prefix}
-                    suffix={m.suffix}
-                    started={started}
-                  />
+                  <Counter target={m.target} prefix={m.prefix} suffix={m.suffix} started={started} />
                 </div>
                 <p className={`text-xs font-bold ${m.badgeClass}`}>{m.badge}</p>
               </div>
@@ -157,9 +100,7 @@ export default function DashboardSection() {
 
           {/* Progress bars */}
           <div className="space-y-4">
-            <p className="text-gray-400 text-xs uppercase tracking-widest font-semibold mb-5">
-              Pipeline Health
-            </p>
+            <p className="text-gray-400 text-xs uppercase tracking-widest font-semibold mb-5">Pipeline Health</p>
             {PIPELINE.map((p, i) => (
               <div key={p.label}>
                 <div className="flex justify-between items-center mb-1.5">
@@ -169,16 +110,12 @@ export default function DashboardSection() {
                 <div className="h-2.5 bg-white/10 rounded-full overflow-hidden">
                   <div
                     className="h-full bg-accent rounded-full transition-all duration-700 ease-out"
-                    style={{
-                      width: `${barWidths[i]}%`,
-                      transitionDelay: `${i * 0.15}s`,
-                    }}
+                    style={{ width: `${barWidths[i]}%`, transitionDelay: `${i * 0.15}s` }}
                   />
                 </div>
               </div>
             ))}
           </div>
-
         </div>
       </div>
     </section>

@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 export default function HeroSection() {
   return (
-    <section className="bg-[#F8F7F5] pt-36 pb-24 px-4">
+    <section className="bg-black pt-36 pb-24 px-4">
       <div className="max-w-5xl mx-auto text-center">
 
         {/* Badge */}
@@ -13,7 +13,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: -16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: 'easeOut' }}
-          className="inline-flex items-center gap-2 border border-brand-cyan/40 bg-brand-cyan/5 rounded-full px-5 py-2 mb-10"
+          className="inline-flex items-center gap-2 border border-brand-cyan/40 bg-brand-cyan/10 rounded-full px-5 py-2 mb-10"
         >
           <span className="w-2 h-2 bg-brand-cyan rounded-full inline-block" />
           <span className="text-brand-cyan text-sm font-bold tracking-wide">
@@ -21,23 +21,23 @@ export default function HeroSection() {
           </span>
         </motion.div>
 
-        {/* Cyan line draws in — top */}
+        {/* Cyan lines — 0s (immediate) */}
         <div className="flex items-center justify-center gap-3 mb-6">
           <motion.div
             initial={{ width: 0 }}
             animate={{ width: 48 }}
-            transition={{ duration: 0.8, delay: 0.35, ease: 'easeOut' }}
+            transition={{ duration: 0.8, delay: 0, ease: 'easeOut' }}
             style={{ height: 4, backgroundColor: '#05badd', borderRadius: 9999 }}
           />
           <motion.div
             initial={{ width: 0 }}
             animate={{ width: 16 }}
-            transition={{ duration: 0.5, delay: 0.95, ease: 'easeOut' }}
+            transition={{ duration: 0.5, delay: 0.55, ease: 'easeOut' }}
             style={{ height: 4, backgroundColor: 'rgba(5,186,221,0.35)', borderRadius: 9999 }}
           />
         </div>
 
-        {/* Main headline — slides from left, RED, 900 weight */}
+        {/* Main headline — 0.1s, RED, font-black, massive */}
         <motion.h1
           initial={{ opacity: 0, x: -64 }}
           animate={{ opacity: 1, x: 0 }}
@@ -47,48 +47,48 @@ export default function HeroSection() {
           Stop Losing<br />Leads.
         </motion.h1>
 
-        {/* Cyan line draws in — bottom, after headline visible */}
+        {/* Bottom cyan lines */}
         <div className="flex items-center justify-center gap-3 mt-6 mb-8">
           <motion.div
             initial={{ width: 0 }}
             animate={{ width: 16 }}
-            transition={{ duration: 0.5, delay: 0.75, ease: 'easeOut' }}
+            transition={{ duration: 0.5, delay: 0.45, ease: 'easeOut' }}
             style={{ height: 4, backgroundColor: 'rgba(5,186,221,0.35)', borderRadius: 9999 }}
           />
           <motion.div
             initial={{ width: 0 }}
             animate={{ width: 48 }}
-            transition={{ duration: 0.8, delay: 0.75, ease: 'easeOut' }}
+            transition={{ duration: 0.8, delay: 0.45, ease: 'easeOut' }}
             style={{ height: 4, backgroundColor: '#05badd', borderRadius: 9999 }}
           />
         </div>
 
-        {/* Secondary headline — slides from left 0.3s after main */}
+        {/* Secondary headline — 3s delay, CYAN */}
         <motion.p
           initial={{ opacity: 0, x: -64 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, ease: 'easeOut', delay: 0.4 }}
-          className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-primary leading-tight mb-6"
+          transition={{ duration: 0.6, ease: 'easeOut', delay: 3 }}
+          className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-brand-cyan leading-tight mb-6"
         >
           Start Growing Revenue.
         </motion.p>
 
-        {/* Subheading fades in at 0.9s */}
+        {/* Subheading — 3.9s */}
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.9 }}
-          className="text-gray-500 text-xl max-w-2xl mx-auto leading-relaxed mb-10"
+          transition={{ duration: 0.6, delay: 3.9 }}
+          className="text-gray-300 text-xl max-w-2xl mx-auto leading-relaxed mb-10"
         >
           Blacklyne gives local service businesses the AI-powered systems to capture every lead,
           convert faster, and grow on autopilot.
         </motion.p>
 
-        {/* CTAs rise in */}
+        {/* CTAs — 4.1s */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 1.1 }}
+          transition={{ duration: 0.5, delay: 4.1 }}
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
           <a
@@ -101,7 +101,7 @@ export default function HeroSection() {
           </a>
           <Link
             href="/about"
-            className="border-2 border-primary/25 hover:border-primary text-primary font-bold px-9 py-4 rounded-full text-lg transition-colors"
+            className="border-2 border-white/30 hover:border-white text-white font-bold px-9 py-4 rounded-full text-lg transition-colors"
           >
             Learn More
           </Link>
