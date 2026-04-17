@@ -104,7 +104,7 @@ export default function PricingSection() {
         </motion.div>
 
         {/* Cards — cascade from 1.3s */}
-        <div className="grid md:grid-cols-3 gap-8 items-start mb-16">
+        <div className="grid md:grid-cols-3 gap-8 items-start">
           {PLANS.map((plan, i) => (
             <motion.div
               key={plan.title}
@@ -131,17 +131,17 @@ export default function PricingSection() {
               </p>
 
               <div className="flex items-end gap-1 mb-2">
-                <span className="text-5xl font-black text-brand-red">{plan.price}</span>
-                <span className="text-gray-400 font-semibold mb-1.5">/mo</span>
+                <span className="text-6xl font-black font-mono text-brand-yellow">{plan.price}</span>
+                <span className="text-gray-400 font-semibold mb-2">/mo</span>
               </div>
 
               <p className="font-bold text-primary text-sm mb-1">{plan.tagline}</p>
               <p className="text-gray-500 text-sm mb-6 leading-relaxed">{plan.desc}</p>
 
-              <ul className="space-y-2.5 mb-6 flex-1">
+              <ul className="space-y-3 mb-6 flex-1">
                 {plan.features.map((f) => (
-                  <li key={f} className="flex items-start gap-2.5 text-sm text-gray-700">
-                    <Check size={15} className="text-accent mt-0.5 shrink-0" />
+                  <li key={f} className="flex items-start gap-2.5 text-base font-bold text-black">
+                    <Check size={16} className="text-accent mt-1 shrink-0" />
                     {f}
                   </li>
                 ))}
@@ -150,7 +150,7 @@ export default function PricingSection() {
               <p className="text-accent text-sm italic mb-6">👉 {plan.support}</p>
 
               <a
-                href="https://calendly.com/eddiejasso"
+                href="https://calendly.com/30-ejasso/30min"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block w-full text-center bg-accent hover:bg-accent-dark text-white font-bold py-3.5 rounded-full transition-colors"
@@ -160,30 +160,6 @@ export default function PricingSection() {
             </motion.div>
           ))}
         </div>
-
-        {/* Closer CTA — same cyan section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="bg-white/15 backdrop-blur-sm rounded-2xl p-10 text-center border border-white/20"
-        >
-          <h3 className="text-2xl md:text-3xl font-black text-white mb-4">
-            Not sure which plan is right?
-          </h3>
-          <p className="text-white/80 text-lg mb-8 max-w-xl mx-auto">
-            👉 We&apos;ll show you exactly how many leads you&apos;re currently losing and how to fix it.
-          </p>
-          <a
-            href="https://calendly.com/eddiejasso"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-accent hover:bg-accent-dark text-white font-bold px-10 py-4 rounded-full text-lg transition-colors shadow-xl"
-          >
-            Get a Free Revenue Leak Audit
-          </a>
-        </motion.div>
 
       </div>
     </section>

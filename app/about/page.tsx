@@ -50,17 +50,20 @@ export default function AboutPage() {
 
           {/* Photo */}
           <div>
-            <div className="rounded-2xl overflow-hidden border-4 border-accent shadow-xl">
+            <div
+              className="rounded-2xl overflow-hidden border-4 border-accent shadow-xl bg-brand-cyan"
+              style={{ maxWidth: 400 }}
+            >
               <Image
                 src="/images/eddie-headshot.jpg"
                 alt="Eddie Jasso — Founder of Blacklyne"
-                width={600}
-                height={750}
+                width={400}
+                height={500}
                 className="w-full h-auto"
                 priority
               />
             </div>
-            <div className="mt-6 text-center">
+            <div className="mt-6" style={{ maxWidth: 400 }}>
               <p className="text-xl font-black text-primary">Eddie Jasso</p>
               <p className="text-accent font-bold">Founder &amp; CEO, Blacklyne</p>
             </div>
@@ -93,48 +96,6 @@ export default function AboutPage() {
                 accountability in the sales process.
               </p>
               <p className="text-2xl font-black text-primary">Simple fixes. Massive impact.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── CONTACT CARD ── */}
-      <section className="py-12 px-4 bg-[#F8F7F5]">
-        <div className="max-w-2xl mx-auto">
-          <div className="bg-white rounded-2xl border border-[#F0F0F0] shadow-sm overflow-hidden">
-            <p className="text-center text-xs font-bold text-gray-400 uppercase tracking-widest pt-6 pb-4 px-8">
-              Reach Eddie Directly
-            </p>
-            <div className="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-[#F0F0F0]">
-              <a
-                href="tel:+16029803338"
-                className="flex flex-col items-center gap-1 p-6 hover:bg-[#F8F7F5] transition-colors group"
-              >
-                <span className="text-xs text-gray-400 uppercase tracking-wider font-semibold">Phone</span>
-                <span className="font-black text-primary group-hover:text-accent transition-colors mt-1">
-                  602.980.3338
-                </span>
-              </a>
-              <a
-                href="mailto:30.ejasso@gmail.com"
-                className="flex flex-col items-center gap-1 p-6 hover:bg-[#F8F7F5] transition-colors group"
-              >
-                <span className="text-xs text-gray-400 uppercase tracking-wider font-semibold">Email</span>
-                <span className="font-black text-primary group-hover:text-accent transition-colors mt-1 text-sm">
-                  30.ejasso@gmail.com
-                </span>
-              </a>
-              <a
-                href="https://linkedin.com/in/eddiejasso"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex flex-col items-center gap-1 p-6 hover:bg-[#F8F7F5] transition-colors group"
-              >
-                <span className="text-xs text-gray-400 uppercase tracking-wider font-semibold">LinkedIn</span>
-                <span className="font-black text-accent group-hover:underline mt-1 text-sm">
-                  linkedin.com/in/eddiejasso
-                </span>
-              </a>
             </div>
           </div>
         </div>
@@ -173,11 +134,11 @@ export default function AboutPage() {
             Ready to Fix Your Revenue Leaks?
           </h2>
           <p className="text-white/80 text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
-            Book a free 30-minute call with Eddie. We&apos;ll find where you&apos;re losing money
+            Book a free 30-minute strategy call. We&apos;ll find where you&apos;re losing money
             and map out a plan to recover it.
           </p>
           <a
-            href="https://calendly.com/eddiejasso"
+            href="https://calendly.com/30-ejasso/30min"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-accent hover:bg-accent-dark text-white font-bold px-10 py-4 rounded-full text-lg transition-colors shadow-xl"
@@ -200,7 +161,7 @@ export default function AboutPage() {
             <div>
               <h4 className="text-white font-bold mb-4 text-sm uppercase tracking-wider">Company</h4>
               <ul className="space-y-2 text-sm text-gray-300">
-                <li><Link href="/about" className="hover:text-white transition-colors">About Eddie</Link></li>
+                <li><Link href="/about" className="hover:text-white transition-colors">Meet our founder</Link></li>
                 <li><Link href="/loans" className="hover:text-white transition-colors">Business Capital</Link></li>
               </ul>
             </div>
@@ -208,17 +169,7 @@ export default function AboutPage() {
               <h4 className="text-white font-bold mb-4 text-sm uppercase tracking-wider">Contact</h4>
               <ul className="space-y-2 text-sm text-gray-300">
                 <li><a href="tel:+16029803338" className="hover:text-white transition-colors">602.980.3338</a></li>
-                <li><a href="mailto:30.ejasso@gmail.com" className="hover:text-white transition-colors">30.ejasso@gmail.com</a></li>
-                <li>
-                  <a
-                    href="https://linkedin.com/in/eddiejasso"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-white transition-colors"
-                  >
-                    LinkedIn
-                  </a>
-                </li>
+                <li><a href="mailto:eddie@blacklyne.io" className="hover:text-white transition-colors">eddie@blacklyne.io</a></li>
               </ul>
             </div>
           </div>

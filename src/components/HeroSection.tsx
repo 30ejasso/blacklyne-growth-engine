@@ -8,19 +8,6 @@ export default function HeroSection() {
     <section className="bg-black pt-36 pb-24 px-4">
       <div className="max-w-5xl mx-auto text-center">
 
-        {/* Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: -16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: 'easeOut' }}
-          className="inline-flex items-center gap-2 border border-brand-cyan/40 bg-brand-cyan/10 rounded-full px-5 py-2 mb-10"
-        >
-          <span className="w-2 h-2 bg-brand-cyan rounded-full inline-block" />
-          <span className="text-brand-cyan text-sm font-bold tracking-wide">
-            Eddie Jasso · AI-Powered Business Growth · Phoenix, AZ
-          </span>
-        </motion.div>
-
         {/* Cyan lines — 0s (immediate) */}
         <div className="flex items-center justify-center gap-3 mb-6">
           <motion.div
@@ -67,7 +54,7 @@ export default function HeroSection() {
         <motion.p
           initial={{ opacity: 0, x: -64 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, ease: 'easeOut', delay: 3 }}
+          transition={{ duration: 0.6, ease: 'easeOut', delay: 1 }}
           className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-brand-cyan leading-tight mb-6"
         >
           Start Growing Revenue.
@@ -77,7 +64,7 @@ export default function HeroSection() {
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 3.9 }}
+          transition={{ duration: 0.6, delay: 1.9 }}
           className="text-gray-300 text-xl max-w-2xl mx-auto leading-relaxed mb-10"
         >
           Blacklyne gives local service businesses the AI-powered systems to capture every lead,
@@ -88,7 +75,7 @@ export default function HeroSection() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 4.1 }}
+          transition={{ duration: 0.5, delay: 2.1 }}
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
           <a

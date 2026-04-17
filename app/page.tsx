@@ -2,18 +2,12 @@ import Link from 'next/link';
 import { Check, Zap, TrendingUp, Users, ArrowRight } from 'lucide-react';
 import Nav from '@/components/Nav';
 import HeroSection from '@/components/HeroSection';
+import StatsSection from '@/components/StatsSection';
 import DashboardSection from '@/components/DashboardSection';
 import OrbitSection from '@/components/OrbitSection';
 import PricingSection from '@/components/PricingSection';
 
 /* ─── DATA ─────────────────────────────────────────────────────────────── */
-
-const stats = [
-  { value: '$100M+', label: 'Revenue Generated' },
-  { value: '15+', label: 'Years of Experience' },
-  { value: '24-48hr', label: 'Capital Funding Time' },
-  { value: '300+', label: 'Business Partnerships' },
-];
 
 const trustCards = [
   {
@@ -74,22 +68,39 @@ export default function Home() {
       {/* ── 1. HERO — Black bg ── */}
       <HeroSection />
 
-      {/* ── 2. STATS — Red bg ── */}
-      <div className="bg-brand-red py-12 px-4">
-        <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
-          {stats.map((s) => (
-            <div key={s.label} className="text-center">
-              <p className="text-4xl md:text-5xl font-black text-white">{s.value}</p>
-              <p className="text-sm font-semibold text-white/70 mt-1">{s.label}</p>
-            </div>
-          ))}
-        </div>
-      </div>
+      {/* ── 2. STATS — Red bg, animated counters ── */}
+      <StatsSection />
 
-      {/* ── 3. PRICING — Cyan bg (component) ── */}
+      {/* ── 3. PRICING — Cyan bg ── */}
       <PricingSection />
 
-      {/* ── 4. GUARANTEE — Light Gray bg ── */}
+      {/* ── 4. "NOT SURE" — Black bg ── */}
+      <section className="py-20 px-4 bg-black">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-black text-white mb-4">
+            Not sure which plan is right?
+          </h2>
+          <p className="text-white/70 text-xl mb-10">
+            👉 We&apos;ll show you exactly how many leads you&apos;re currently losing and how to fix it.
+          </p>
+          <a
+            href="https://calendly.com/30-ejasso/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-accent hover:bg-accent-dark text-white font-bold px-10 py-4 rounded-full text-lg transition-colors shadow-xl"
+          >
+            Get a Free Revenue Leak Audit
+          </a>
+        </div>
+      </section>
+
+      {/* ── 5. ANIMATED DASHBOARD — Light Gray bg ── */}
+      <DashboardSection />
+
+      {/* ── 6. ORBITING INDUSTRY ICONS — Black bg ── */}
+      <OrbitSection />
+
+      {/* ── 7. GUARANTEE — Light Gray bg ── */}
       <section className="py-20 px-4 bg-[#EEEEEE]">
         <div className="max-w-3xl mx-auto text-center">
           <div className="w-20 h-20 rounded-full bg-brand-red flex items-center justify-center mx-auto mb-6">
@@ -105,7 +116,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 5. ROI FRAMING — Black bg ── */}
+      {/* ── 8. ROI FRAMING — Black bg ── */}
       <section className="py-24 px-4 bg-black">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
@@ -142,7 +153,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 6. COMPARISON TABLE — Cyan bg ── */}
+      {/* ── 9. COMPARISON TABLE — Cyan bg ── */}
       <section className="py-24 px-4 bg-brand-cyan">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
@@ -181,19 +192,19 @@ export default function Home() {
             <div className="grid grid-cols-4 bg-gray-50 p-4 gap-3">
               <div className="text-sm font-bold text-gray-500 flex items-center">Get Started</div>
               <div className="text-center">
-                <a href="https://calendly.com/eddiejasso" target="_blank" rel="noopener noreferrer"
+                <a href="https://calendly.com/30-ejasso/30min" target="_blank" rel="noopener noreferrer"
                   className="inline-block bg-accent hover:bg-accent-dark text-white text-xs font-bold px-4 py-2 rounded-full transition-colors">
                   Choose Starter
                 </a>
               </div>
               <div className="text-center bg-green-50 rounded-lg">
-                <a href="https://calendly.com/eddiejasso" target="_blank" rel="noopener noreferrer"
+                <a href="https://calendly.com/30-ejasso/30min" target="_blank" rel="noopener noreferrer"
                   className="inline-block bg-primary hover:bg-primary-light text-white text-xs font-bold px-4 py-2 rounded-full transition-colors">
                   Choose Growth
                 </a>
               </div>
               <div className="text-center">
-                <a href="https://calendly.com/eddiejasso" target="_blank" rel="noopener noreferrer"
+                <a href="https://calendly.com/30-ejasso/30min" target="_blank" rel="noopener noreferrer"
                   className="inline-block bg-brand-red hover:opacity-90 text-white text-xs font-bold px-4 py-2 rounded-full transition-colors">
                   Choose Pro
                 </a>
@@ -203,25 +214,19 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 7. ANIMATED DASHBOARD — Light Gray bg ── */}
-      <DashboardSection />
-
-      {/* ── 8. ORBITING INDUSTRY ICONS — Black bg ── */}
-      <OrbitSection />
-
-      {/* ── 9. FINAL CTA — Red bg ── */}
+      {/* ── 10. FINAL CTA — Red bg ── */}
       <section className="bg-brand-red py-24 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-5xl md:text-6xl font-black text-white mb-6 leading-tight">
             Ready to Grow?
           </h2>
           <p className="text-white/80 text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
-            Book a free 30-minute call with Eddie. We&apos;ll map out exactly where you&apos;re
+            Book a free 30-minute call. We&apos;ll map out exactly where you&apos;re
             losing revenue — and how to recover it fast.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="https://calendly.com/eddiejasso"
+              href="https://calendly.com/30-ejasso/30min"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-accent hover:bg-accent-dark text-white font-bold px-10 py-4 rounded-full text-lg transition-colors shadow-xl"
@@ -232,13 +237,13 @@ export default function Home() {
               href="/about"
               className="border-2 border-white/40 hover:border-white text-white font-bold px-10 py-4 rounded-full text-lg transition-colors"
             >
-              Learn About Eddie
+              Meet our founder
             </Link>
           </div>
         </div>
       </section>
 
-      {/* ── 10. CREDIBILITY — Cyan bg ── */}
+      {/* ── 11. CREDIBILITY — Cyan bg ── */}
       <section className="py-24 px-4 bg-brand-cyan">
         <div className="max-w-6xl mx-auto">
           <div className="max-w-3xl mb-20">
@@ -291,7 +296,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 11. BUSINESS CAPITAL — Light Gray bg ── */}
+      {/* ── 12. BUSINESS CAPITAL — Light Gray bg ── */}
       <section className="py-20 px-4 bg-[#EEEEEE]">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10">
           <div className="max-w-xl">
@@ -334,7 +339,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 12. TESTIMONIALS — Black bg ── */}
+      {/* ── 13. TESTIMONIALS — Black bg ── */}
       <section className="py-24 px-4 bg-black">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
@@ -369,7 +374,7 @@ export default function Home() {
             <div>
               <h4 className="text-white font-bold mb-4 text-sm uppercase tracking-wider">Company</h4>
               <ul className="space-y-2 text-sm text-gray-300">
-                <li><Link href="/about" className="hover:text-white transition-colors">About Eddie</Link></li>
+                <li><Link href="/about" className="hover:text-white transition-colors">Meet our founder</Link></li>
                 <li><Link href="/loans" className="hover:text-white transition-colors">Business Capital</Link></li>
               </ul>
             </div>
@@ -377,17 +382,7 @@ export default function Home() {
               <h4 className="text-white font-bold mb-4 text-sm uppercase tracking-wider">Contact</h4>
               <ul className="space-y-2 text-sm text-gray-300">
                 <li><a href="tel:+16029803338" className="hover:text-white transition-colors">602.980.3338</a></li>
-                <li><a href="mailto:30.ejasso@gmail.com" className="hover:text-white transition-colors">30.ejasso@gmail.com</a></li>
-                <li>
-                  <a
-                    href="https://linkedin.com/in/eddiejasso"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-white transition-colors"
-                  >
-                    LinkedIn
-                  </a>
-                </li>
+                <li><a href="mailto:eddie@blacklyne.io" className="hover:text-white transition-colors">eddie@blacklyne.io</a></li>
               </ul>
             </div>
           </div>

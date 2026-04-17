@@ -9,12 +9,12 @@ export default function Nav() {
         </Link>
         <div className="hidden md:flex items-center gap-7">
           <Link href="/" className="text-gray-500 hover:text-primary text-sm font-semibold transition-colors">Home</Link>
-          <Link href="/about" className="text-gray-500 hover:text-primary text-sm font-semibold transition-colors">About</Link>
+          <Link href="/about" className="text-gray-500 hover:text-primary text-sm font-semibold transition-colors">Meet our founder</Link>
           <Link href="/loans" className="text-gray-500 hover:text-primary text-sm font-semibold transition-colors">Business Capital</Link>
           <a href="tel:+16029803338" className="text-gray-500 hover:text-primary text-sm font-semibold transition-colors">602.980.3338</a>
         </div>
         <a
-          href="https://calendly.com/eddiejasso"
+          href="https://calendly.com/30-ejasso/30min"
           target="_blank"
           rel="noopener noreferrer"
           className="bg-accent hover:bg-accent-dark text-white text-sm font-bold px-5 py-2.5 rounded-full transition-colors"

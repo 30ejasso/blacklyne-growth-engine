@@ -29,7 +29,7 @@ export default function LoansPage() {
     },
     {
       title: 'Business Lines of Credit',
-      amount: '$10K – $150K',
+      amount: '$10K – $3M',
       terms: '12–36 months',
       rate: 'Flexible',
       desc: 'Access capital when you need it. Pay only for what you use.',
@@ -263,7 +263,7 @@ export default function LoansPage() {
                     <span className="font-bold text-accent">$50K–$150K</span>.
                   </p>
                   <a
-                    href="https://calendly.com/eddiejasso"
+                    href="https://calendly.com/30-ejasso/30min"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block w-full bg-accent hover:bg-accent-dark text-white font-bold py-3 rounded-lg text-center transition-colors"
