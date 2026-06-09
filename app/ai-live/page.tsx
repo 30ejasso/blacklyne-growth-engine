@@ -70,51 +70,80 @@ const aiLiveTestimonials = [
 
 const RESERVE_URL =
   'https://calendly.com/30-ejasso/interested-in-blacklyne-ai-live';
-const PHONE = '480-284-9070';
-const PHONE_TEL = '+14802849070';
+const PHONE = '602-980-3338';
+const PHONE_TEL = '+16029803338';
 const SMS_HREF = `sms:${PHONE_TEL}`;
 
 const audience = [
-  { icon: Briefcase, label: 'Business Owners' },
-  { icon: TrendingUp, label: 'Sales Professionals' },
-  { icon: Home, label: 'Realtors' },
-  { icon: Landmark, label: 'Mortgage Professionals' },
-  { icon: GraduationCap, label: 'Students (14+)' },
+  { icon: Briefcase, label: 'Professionals' },
+  { icon: TrendingUp, label: 'Entrepreneurs' },
+  { icon: GraduationCap, label: 'Students' },
   { icon: Heart, label: 'Retirees' },
+  { icon: Home, label: 'Parents' },
+  { icon: Landmark, label: 'Small Business Owners' },
   { icon: Sparkles, label: 'Anyone Curious About AI' },
+];
+
+const outcomes = [
+  {
+    icon: Clock3,
+    title: 'Save Hours Every Week',
+    desc: 'Use AI to write emails, summarize information, create plans, organize ideas, and complete tasks faster.',
+  },
+  {
+    icon: Sparkles,
+    title: 'Research Anything',
+    desc: 'Learn how to use ChatGPT, Claude, and modern AI tools to learn almost any topic faster.',
+  },
+  {
+    icon: Zap,
+    title: 'Create Content',
+    desc: 'Generate images, videos, presentations, documents, social posts, and marketing materials.',
+  },
+  {
+    icon: Trophy,
+    title: 'Make Better Decisions',
+    desc: 'Use AI to compare options, evaluate purchases, plan vacations, analyze opportunities, and solve problems.',
+  },
+  {
+    icon: MessageCircle,
+    title: 'Become More Productive',
+    desc: 'Turn AI into your personal assistant for work, school, family, and everyday life.',
+  },
+  {
+    icon: Briefcase,
+    title: 'Understand the AI Landscape',
+    desc: 'Learn the difference between ChatGPT, Claude, OpenClaw, AI Agents, AI Automation, and when to use each.',
+  },
 ];
 
 const sessions = [
   {
     n: 1,
-    title: 'AI Foundations & ChatGPT',
+    title: 'AI Foundations & Everyday Productivity',
     items: [
-      'Understanding AI',
-      'ChatGPT setup',
-      'Voice conversations',
-      'Daily productivity',
+      'ChatGPT',
+      'Claude',
+      'Voice AI',
+      'Research',
+      'Writing',
+      'Planning',
+      'Productivity',
+      'Prompt Engineering',
     ],
   },
   {
     n: 2,
-    title: 'AI Productivity & Automation',
-    items: [
-      'Writing',
-      'Research',
-      'Spreadsheets',
-      'Presentations',
-      'Workflow automation',
-    ],
-  },
-  {
-    n: 3,
-    title: 'Advanced AI Applications',
+    title: 'Advanced AI & Real-World Applications',
     items: [
       'Images',
       'Video',
-      'Business use cases',
-      'AI assistants',
-      'Real-world implementation',
+      'AI Assistants',
+      'OpenClaw',
+      'Automation',
+      'Business Applications',
+      'Future AI Trends',
+      'Real-World Workflows',
     ],
   },
 ];
@@ -163,7 +192,8 @@ export default function AiLivePage() {
             <p className="text-gray-500 text-lg max-w-2xl mx-auto leading-relaxed mb-8">
               Master ChatGPT, AI assistants, automation tools, content creation,
               and productivity systems in a live, hands-on workshop designed for
-              everyday people and business owners.
+              professionals, entrepreneurs, students, retirees, parents, small
+              business owners, and anyone curious about AI.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a
@@ -262,18 +292,43 @@ export default function AiLivePage() {
         </div>
       </section>
 
-      {/* WHAT YOU'LL LEARN */}
+      {/* WHAT YOU'LL LEARN — outcomes */}
       <section className="py-20 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-black text-primary mb-4">
               What You&apos;ll Learn
             </h2>
-            <p className="text-gray-500 text-lg">
-              Two sessions. Practical from day one.
+            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
+              Outcome-focused training you can use the same day.
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-16">
+            {outcomes.map(({ icon: Icon, title, desc }) => (
+              <div
+                key={title}
+                className="bg-[#F8F7F5] border border-gray-200 rounded-2xl p-6 hover:border-accent hover:shadow-md transition-all"
+              >
+                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-4">
+                  <Icon className="text-accent" size={24} />
+                </div>
+                <h3 className="font-black text-primary text-lg mb-2 uppercase tracking-wide">
+                  {title}
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mb-10">
+            <p className="text-brand-cyan text-sm font-bold uppercase tracking-widest mb-2">
+              Program Structure
+            </p>
+            <h3 className="text-3xl md:text-4xl font-black text-primary">
+              Two Saturday Sessions
+            </h3>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6">
             {sessions.map((s) => (
               <div
                 key={s.n}
@@ -436,7 +491,7 @@ export default function AiLivePage() {
               Only 15 seats available for this Founder&apos;s Cohort.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-3 gap-6">
             {/* Single seat */}
             <div className="bg-white rounded-2xl p-8 border-2 border-accent shadow-xl relative">
               <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-white text-xs font-black uppercase tracking-widest px-4 py-1 rounded-full">
@@ -484,6 +539,72 @@ export default function AiLivePage() {
                 Reserve Two Seats
               </a>
             </div>
+
+            {/* Private AI Coaching */}
+            <div className="bg-primary rounded-2xl p-8 border-2 border-brand-cyan shadow-xl relative text-white">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-cyan text-primary text-xs font-black uppercase tracking-widest px-4 py-1 rounded-full">
+                VIP Experience
+              </div>
+              <p className="text-brand-cyan text-xs font-bold uppercase tracking-widest mb-2 mt-2">
+                Private AI Coaching
+              </p>
+              <div className="flex items-baseline gap-3 mb-2">
+                <span className="text-6xl font-black text-white">$2,997</span>
+              </div>
+              <p className="text-white/80 text-sm mb-5 leading-relaxed">
+                Work directly with Eddie Jasso through four private 90-minute
+                coaching sessions focused on AI tools, productivity, automation,
+                ChatGPT, Claude, OpenClaw, and real-world implementation.
+              </p>
+              <ul className="space-y-2 mb-6">
+                {[
+                  'Four 90-minute sessions',
+                  'Personalized AI training',
+                  'ChatGPT setup',
+                  'Claude workflows',
+                  'OpenClaw introduction',
+                  'AI productivity systems',
+                  'Direct access between sessions',
+                ].map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-start gap-2 text-white/90 text-sm"
+                  >
+                    <Check
+                      size={16}
+                      className="text-brand-cyan shrink-0 mt-0.5"
+                    />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <a
+                href={RESERVE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-center bg-brand-cyan hover:opacity-90 text-primary font-bold px-6 py-4 rounded-full transition-opacity"
+              >
+                Schedule a Discovery Call
+              </a>
+            </div>
+          </div>
+
+          <div className="mt-10 bg-white border border-gray-200 rounded-2xl p-8 text-center">
+            <h3 className="text-2xl font-black text-primary mb-2">
+              Looking for team training or business implementation?
+            </h3>
+            <p className="text-gray-600 mb-5">
+              Ask about custom workshops, private training, and AI consulting
+              for your organization.
+            </p>
+            <a
+              href={RESERVE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-primary hover:bg-primary-light text-white font-bold px-8 py-3 rounded-full transition-colors"
+            >
+              Inquire About Team Training
+            </a>
           </div>
         </div>
       </section>
