@@ -10,6 +10,7 @@ export default function Nav() {
         <div className="hidden md:flex items-center gap-7">
           <Link href="/" className="text-gray-500 hover:text-primary text-sm font-semibold transition-colors">Home</Link>
           <Link href="/about" className="text-gray-500 hover:text-primary text-sm font-semibold transition-colors">Meet our founder</Link>
+          <Link href="/ai-live" className="text-gray-500 hover:text-primary text-sm font-semibold transition-colors">AI Live</Link>
           <Link href="/loans" className="text-gray-500 hover:text-primary text-sm font-semibold transition-colors">Business Capital</Link>
           <a href="tel:+16029803338" className="text-gray-500 hover:text-primary text-sm font-semibold transition-colors">602.980.3338</a>
         </div>

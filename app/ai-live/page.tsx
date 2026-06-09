@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import {
   Briefcase,
   TrendingUp,
@@ -15,14 +16,57 @@ import {
   Laptop,
   UserCheck,
   MessageSquare,
+  Zap,
+  Clock3,
+  MessageCircle,
+  Trophy,
 } from 'lucide-react';
 import Nav from '@/components/Nav';
 
 export const metadata: Metadata = {
-  title: 'Blacklyne AI Live | Learn AI in Three Saturdays',
+  title: 'Blacklyne AI Live | Learn AI Before Everyone Else Does',
   description:
-    'A live, hands-on AI workshop in Gilbert / Queen Creek for beginners, professionals, business owners, students, and retirees.',
+    'A live, hands-on AI workshop in Queen Creek, Arizona for beginners, professionals, business owners, students, and retirees.',
 };
+
+const businessOwnerCards = [
+  {
+    icon: Zap,
+    title: 'Capture More Leads',
+    desc: 'Use AI to respond faster and stop opportunities from slipping through the cracks.',
+  },
+  {
+    icon: Clock3,
+    title: 'Save Time',
+    desc: 'Automate repetitive tasks and free up hours every week.',
+  },
+  {
+    icon: MessageCircle,
+    title: 'Improve Customer Communication',
+    desc: 'Follow up consistently without adding staff.',
+  },
+  {
+    icon: Trophy,
+    title: 'Stay Competitive',
+    desc: 'Learn the tools businesses are using right now to gain an advantage.',
+  },
+];
+
+const aiLiveTestimonials = [
+  {
+    role: 'Business Owner',
+    quote:
+      'Eddie has a unique ability to simplify complex concepts and make them practical.',
+  },
+  {
+    role: 'Sales Professional',
+    quote: "One of the best trainers and leaders I've worked with.",
+  },
+  {
+    role: 'Local Entrepreneur',
+    quote: 'Immediately actionable strategies that create real results.',
+  },
+];
 
 const RESERVE_URL = 'https://calendly.com/30-ejasso/30min';
 const PHONE = '480-284-9070';
@@ -75,10 +119,10 @@ const sessions = [
 ];
 
 const classDetails = [
-  { icon: Calendar, label: 'Three Saturdays' },
+  { icon: Calendar, label: 'Two Saturday Sessions' },
   { icon: Clock, label: '8:00 AM – 11:00 AM' },
   { icon: Users, label: 'Live In-Person Training' },
-  { icon: MapPin, label: 'Gilbert / Queen Creek Area' },
+  { icon: MapPin, label: 'Queen Creek, Arizona' },
   { icon: Laptop, label: 'Bring Your Own Laptop' },
   { icon: UserCheck, label: 'Small Class Size' },
 ];
@@ -113,12 +157,12 @@ export default function AiLivePage() {
               Blacklyne <span className="text-accent">AI Live</span>
             </h1>
             <p className="text-2xl md:text-3xl font-bold text-primary/80 mb-6">
-              Learn AI in Three Saturdays
+              Learn AI Before Everyone Else Does
             </p>
             <p className="text-gray-500 text-lg max-w-2xl mx-auto leading-relaxed mb-8">
-              A live, hands-on workshop designed for beginners, professionals,
-              business owners, students, and retirees who want to understand and
-              use AI in everyday life and business.
+              Master ChatGPT, AI assistants, automation tools, content creation,
+              and productivity systems in a live, hands-on workshop designed for
+              everyday people and business owners.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a
@@ -137,6 +181,14 @@ export default function AiLivePage() {
                 Text Eddie · {PHONE}
               </a>
             </div>
+            <div className="mt-6 inline-flex flex-col items-center gap-1 bg-brand-red/10 border-2 border-brand-red rounded-2xl px-6 py-3">
+              <span className="text-brand-red text-xs font-black uppercase tracking-[0.2em]">
+                Founder&apos;s Cohort
+              </span>
+              <span className="text-primary font-black text-lg">
+                Only 15 Seats Available
+              </span>
+            </div>
           </div>
 
           <div className="relative w-full max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-2xl border border-gray-200 bg-black aspect-video">
@@ -151,8 +203,39 @@ export default function AiLivePage() {
         </div>
       </section>
 
-      {/* WHO THIS IS FOR */}
+      {/* WHY BUSINESS OWNERS ARE LEARNING AI */}
       <section className="py-20 px-4 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-black text-primary mb-4">
+              Why Business Owners Are Learning AI
+            </h2>
+            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
+              AI is no longer optional. Learn practical ways to save time,
+              improve customer communication, and capture more opportunities.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {businessOwnerCards.map(({ icon: Icon, title, desc }) => (
+              <div
+                key={title}
+                className="bg-[#F8F7F5] border border-gray-200 rounded-2xl p-6 hover:border-accent hover:shadow-md transition-all"
+              >
+                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-4">
+                  <Icon className="text-accent" size={24} />
+                </div>
+                <h3 className="font-black text-primary text-lg mb-2">
+                  {title}
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* WHO THIS IS FOR */}
+      <section className="py-20 px-4 bg-[#F8F7F5]">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-black text-primary mb-4">
@@ -179,14 +262,14 @@ export default function AiLivePage() {
       </section>
 
       {/* WHAT YOU'LL LEARN */}
-      <section className="py-20 px-4 bg-[#F8F7F5]">
+      <section className="py-20 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-black text-primary mb-4">
               What You&apos;ll Learn
             </h2>
             <p className="text-gray-500 text-lg">
-              Three sessions. Practical from day one.
+              Two sessions. Practical from day one.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
@@ -250,6 +333,9 @@ export default function AiLivePage() {
               </div>
             ))}
           </div>
+          <p className="text-white/60 text-sm text-center mt-8">
+            Exact address provided after registration.
+          </p>
         </div>
       </section>
 
@@ -260,24 +346,33 @@ export default function AiLivePage() {
             <p className="text-brand-cyan text-sm font-bold uppercase tracking-widest mb-2">
               Meet Your Instructor
             </p>
-            <h2 className="text-4xl md:text-5xl font-black text-primary">
+            <h2 className="text-4xl md:text-5xl font-black text-primary mb-2">
               Eddie Jasso, MBA
             </h2>
+            <p className="text-accent font-bold text-lg">
+              Founder, Blacklyne AI Live
+            </p>
           </div>
           <div className="grid md:grid-cols-3 gap-10 items-center">
             <div className="md:col-span-1 flex justify-center">
-              <div className="w-56 h-56 rounded-2xl bg-gradient-to-br from-primary to-brand-cyan flex items-center justify-center shadow-xl">
-                <span className="text-white text-7xl font-black">EJ</span>
+              <div className="relative w-56 h-56 md:w-64 md:h-64 rounded-2xl overflow-hidden shadow-xl ring-4 ring-accent/20">
+                <Image
+                  src="/images/eddie-headshot.jpg"
+                  alt="Eddie Jasso, MBA — Founder, Blacklyne AI Live"
+                  fill
+                  sizes="(max-width: 768px) 224px, 256px"
+                  className="object-cover"
+                  priority
+                />
               </div>
             </div>
             <div className="md:col-span-2">
               <ul className="space-y-3">
                 {[
                   'MBA in Cybersecurity',
-                  '20+ years of sales and technology experience',
+                  '20+ Years in Sales, Technology & Business Leadership',
                   'Founder of Blacklyne',
-                  'National sales leadership experience',
-                  'AI automation consultant',
+                  'AI Automation Consultant',
                 ].map((item) => (
                   <li
                     key={item}
@@ -296,8 +391,35 @@ export default function AiLivePage() {
         </div>
       </section>
 
-      {/* PRICING */}
+      {/* TESTIMONIALS */}
       <section className="py-20 px-4 bg-[#F8F7F5]">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-black text-primary mb-4">
+              What People Say About Working With Eddie
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {aiLiveTestimonials.map((t) => (
+              <div
+                key={t.role}
+                className="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm"
+              >
+                <p className="text-accent text-4xl font-black leading-none mb-3">
+                  &ldquo;
+                </p>
+                <p className="text-gray-700 mb-5 leading-relaxed">{t.quote}</p>
+                <p className="text-primary font-black text-sm uppercase tracking-wide">
+                  {t.role}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* PRICING */}
+      <section className="py-20 px-4 bg-white">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 border border-brand-red/40 bg-brand-red/5 rounded-full px-4 py-2 mb-4">
@@ -309,6 +431,9 @@ export default function AiLivePage() {
             <h2 className="text-4xl md:text-5xl font-black text-primary mb-3">
               Limited Founding Member Pricing
             </h2>
+            <p className="text-brand-red font-black text-lg">
+              Only 15 seats available for this Founder&apos;s Cohort.
+            </p>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
             {/* Single seat */}
@@ -363,7 +488,7 @@ export default function AiLivePage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-20 px-4 bg-white">
+      <section className="py-20 px-4 bg-[#F8F7F5]">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-black text-primary mb-4">
@@ -374,7 +499,7 @@ export default function AiLivePage() {
             {faqs.map((f) => (
               <details
                 key={f.q}
-                className="group bg-[#F8F7F5] border border-gray-200 rounded-xl p-5 hover:border-accent transition-colors"
+                className="group bg-white border border-gray-200 rounded-xl p-5 hover:border-accent transition-colors"
               >
                 <summary className="flex justify-between items-center cursor-pointer font-bold text-primary text-lg list-none">
                   {f.q}
@@ -393,10 +518,10 @@ export default function AiLivePage() {
       <section className="py-24 px-4 bg-brand-red">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-5xl md:text-6xl font-black text-white mb-6 leading-tight">
-            Ready to Learn AI?
+            Reserve Your Seat Before This Cohort Fills
           </h2>
-          <p className="text-white/80 text-xl mb-10">
-            Reserve your seat in the Founder&apos;s Cohort today.
+          <p className="text-white/90 text-xl mb-10 font-bold">
+            Only 15 seats available.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
