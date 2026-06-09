@@ -150,7 +150,7 @@ const sessions = [
 
 const classDetails = [
   { icon: Calendar, label: 'Two Saturday Sessions' },
-  { icon: Clock, label: '8:00 AM – 11:00 AM' },
+  { icon: Clock, label: '9:00 AM – 12:00 PM' },
   { icon: Users, label: 'Live In-Person Training' },
   { icon: MapPin, label: 'Queen Creek, Arizona' },
   { icon: Laptop, label: 'Bring Your Own Laptop' },
