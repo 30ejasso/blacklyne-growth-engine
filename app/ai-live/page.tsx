@@ -68,7 +68,8 @@ const aiLiveTestimonials = [
   },
 ];
 
-const RESERVE_URL = 'https://calendly.com/30-ejasso/30min';
+const RESERVE_URL =
+  'https://calendly.com/30-ejasso/interested-in-blacklyne-ai-live';
 const PHONE = '480-284-9070';
 const PHONE_TEL = '+14802849070';
 const SMS_HREF = `sms:${PHONE_TEL}`;
